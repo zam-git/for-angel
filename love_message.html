@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message for Angel 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            padding: 50px;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff3366;
+            font-size: 32px;
+            animation: glow 1.5s infinite alternate;
+        }
+        .message {
+            font-size: 22px;
+            color: #ff3366;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #ff6699; }
+            to { text-shadow: 0 0 20px #ff3366; }
+        }
+        .heart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ff3366;
+            transform: rotate(-45deg);
+            top: 50px;
+            left: 50px;
+            box-shadow: -10px -10px 30px rgba(255, 0, 102, 0.5);
+            animation: heart-grow 7s ease-in-out forwards;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ff3366;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 50px;
+        }
+        @keyframes heart-grow {
+            0% { transform: scale(0) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Special Message for Angel 💖</h1>
+    <div class="heart-container">
+        <div class="heart"></div>
+    </div>
+    <p class="message"></p>
+
+    <script>
+        let message = "Dear Angel,\n\nYou are the most beautiful chapter of my life. Every moment with you is like a dream. I love you beyond words! ❤️\n\nYours forever, \nZam";
+        let index = 0;
+        function typeWriter() {
+            if (index < message.length) {
+                document.querySelector(".message").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        typeWriter();
+    </script>
+</body>
+</html>
